@@ -1,33 +1,41 @@
 {
-  "name": "saml20",
-  "version": "0.1.14",
-  "description": "SAML 2.0 and 1.1 token parser for Node.js",
+  "name": "saml12",
+  "version": "0.1.1",
+  "description": "SAML 1.1 and 2.0 token parser and validator for Node.js",
   "main": "./lib/index.js",
   "dependencies": {
-    "lodash": "3.10.1",
-    "thumbprint": "0.0.1",
+    "lodash": "4.17.11",
     "xml-crypto": "0.8.1",
     "xml2js": "0.4.4",
     "xmldom": "0.1.19"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/leandrob/saml20.git"
+    "url": "https://github.com/TqrHsn/saml20.git"
   },
   "keywords": [
-    "SAML 2.0",
+    "SAML",
     "SAML 1.1",
-    "Token Parser"
+    "SAML 2.0",
+    "Token Parser",
+    "Assertion Parser",
+    "SAML Validator"
   ],
   "scripts": {
     "test": "npm run jshint && mocha -R spec test",
-    "jshint": "jshint lib/*.js"
+    "jshint": "jshint lib"
   },
   "author": "Leandro Boffi (me@leandrob.com)",
+  "contributors":[
+    {
+      "name": "Tauqeer Hassan",
+      "email": "tqrhsn@gmail.com"
+    }
+  ],
   "license": "MIT",
   "readmeFilename": "README.md",
   "devDependencies": {
-    "jshint": "2.8.0",
-    "mocha": "2.3.3"
+    "jshint": "2.10.2",
+    "mocha": "4.1.0"
   }
 }

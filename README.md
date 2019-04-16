@@ -1,11 +1,13 @@
 SAML 2.0 & 1.1 Assertion Parser & Validator
 =============
-saml20 is a simple module that allows you to parse and validate SAML 2.0 and 1.1 tokens. It has been tested with [Microsoft ADFS](http://en.wikipedia.org/wiki/Active_Directory_Federation_Services), OKTA, and PingOne tokens.
+saml12 is a fork of saml20. It is the same library with updated versions of vulnerable dependencies and bug fixes. 
+
+saml12 is a simple module that allows you to parse and validate SAML 1.1 and 2.0 tokens. It has been tested with [Microsoft ADFS](http://en.wikipedia.org/wiki/Active_Directory_Federation_Services), OKTA, and PingOne tokens.
 
 ## Installation
 
 ```bash
-$ npm install saml20
+$ npm install saml12
 ```
 
 ## Usage
@@ -18,7 +20,7 @@ Parses the `rawAssertion` without validating signature, expiration and audience.
 
 ```javascript
 
-var saml = require('saml20');
+var saml = require('saml12');
 
 saml.parse(rawAssertion, function(err, profile) {
 	// err
@@ -44,7 +46,7 @@ You can use either `thumbprint` or `publicKey` but you should use at least one.
 
 ```javascript
 
-var saml = require('saml20');
+var saml = require('saml12');
 
 var options = {
 	thumbprint: '1aeabdfa4473ecc7efc5947b18436c575574baf8',
@@ -64,7 +66,7 @@ or using publicKey:
 
 ```javascript
 
-var saml = require('saml20');
+var saml = require('saml12');
 
 var options = {
 	publicKey: 'MIICDzCCAXygAwIBAgIQVWXAvbbQyI5Bc...',
