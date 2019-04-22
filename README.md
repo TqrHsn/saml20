@@ -23,10 +23,13 @@ Parses the `rawAssertion` without validating signature, expiration and audience.
 var saml = require('saml12');
 
 saml.parse(rawAssertion, function(err, profile) {
-	// err
+    // err
 
-	var claims = profile.claims; // Array of user attributes;
-	var issuer = profile.issuer; // String Issuer name.
+    var audience = profile.audience;            // Who the assertion is intended for
+    var claims = profile.claims;                // Array of user attributes;
+    var issuer = profile.issuer;                // String Issuer name.
+    var notBefore = profile.notBefore;          // Earliest time instant at which the assertion is valid (string).
+    var notOnOrAfter = profile.notOnOrAfter;    // Time instant at which the assertion has expired (string).
 });
 
 ```
@@ -49,15 +52,18 @@ You can use either `thumbprint` or `publicKey` but you should use at least one.
 var saml = require('saml12');
 
 var options = {
-	thumbprint: '1aeabdfa4473ecc7efc5947b18436c575574baf8',
-	audience: 'http://myservice.com/'
+    thumbprint: '1aeabdfa4473ecc7efc5947b18436c575574baf8',
+    audience: 'http://myservice.com/'
 }
 
 saml.validate(rawAssertion, options, function(err, profile) {
-	// err
+    // err
 
-	var claims = profile.claims; // Array of user attributes;
-	var issuer = profile.issuer; // String Issuer name.
+    var audience = profile.audience;            // Who the assertion is intended for
+    var claims = profile.claims;                // Array of user attributes;
+    var issuer = profile.issuer;                // String Issuer name.
+    var notBefore = profile.notBefore;          // Earliest time instant at which the assertion is valid (string).
+    var notOnOrAfter = profile.notOnOrAfter;    // Time instant at which the assertion has expired (string).
 });
 
 ```
@@ -69,15 +75,18 @@ or using publicKey:
 var saml = require('saml12');
 
 var options = {
-	publicKey: 'MIICDzCCAXygAwIBAgIQVWXAvbbQyI5Bc...',
-	audience: 'http://myservice.com/'
+    publicKey: 'MIICDzCCAXygAwIBAgIQVWXAvbbQyI5Bc...',
+    audience: 'http://myservice.com/'
 }
 
 saml.validate(rawAssertion, options, function(err, profile) {
-	// err
+    // err
 
-	var claims = profile.claims; // Array of user attributes;
-	var issuer = profile.issuer; // String Issuer name.
+    var audience = profile.audience;            // Who the assertion is intended for
+    var claims = profile.claims;                // Array of user attributes;
+    var issuer = profile.issuer;                // String Issuer name.
+    var notBefore = profile.notBefore;          // Earliest time instant at which the assertion is valid (string).
+    var notOnOrAfter = profile.notOnOrAfter;    // Time instant at which the assertion has expired (string).
 });
 
 ```

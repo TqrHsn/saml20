@@ -19,6 +19,8 @@ describe('lib.saml11', function() {
 			assert.equal(issuerName, profile.issuer);
 			assert.ok(profile.claims);
 			assert.equal('lean@kidozen.com',profile.claims['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress']);
+			assert.equal('2014-08-14T18:46:36.350Z',profile.notBefore);
+			assert.equal('2014-08-14T19:46:36.350Z', profile.notOnOrAfter);
 			done();
 		})
 	});

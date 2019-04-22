@@ -20,6 +20,8 @@ describe('lib.saml20', function() {
 			
 			assert.strictEqual(issuerName, profile.issuer);
 			assert.strictEqual('demo@kidozen.com',profile.claims['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress']);
+			assert.equal('2014-08-14T15:34:11.070Z',profile.notBefore);
+			assert.equal('2014-08-14T16:34:11.070Z', profile.notOnOrAfter);
 			done();
 		})
 	});
